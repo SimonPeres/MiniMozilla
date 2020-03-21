@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="webBrowserController">
+   <top>
+      <VBox prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="25.0" prefWidth="600.0" style="-fx-background-color: #dad8d8;" stylesheets="@styling.css">
+               <children>
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="29.0" styleClass="backAndForwardButton" stylesheets="@styling.css" text="&lt;">
+                     <tooltip>
+                        <Tooltip text="Go Back" />
+                     </tooltip></Button>
+                  <Button fx:id="forwardButton" mnemonicParsing="false" onAction="#goForward" prefHeight="25.0" prefWidth="29.0" styleClass="backAndForwardButton" stylesheets="@styling.css" text="&gt;">
+                     <tooltip>
+                        <Tooltip text="Empty Tooltip" />
+                     </tooltip></Button>
+                  <TextField fx:id="urlSearchBar" prefHeight="25.0" prefWidth="200.0" promptText="Enter the URL" />
+                  <Button fx:id="urlSearchButton" mnemonicParsing="false" onAction="#urlSearch" prefHeight="25.0" prefWidth="40.0" styleClass="goButton" stylesheets="@styling.css" text="GO">
+                     <tooltip>
+                        <Tooltip text="Search">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Tooltip>
+                     </tooltip></Button>
+                  <TextField fx:id="contentSearchBar" prefHeight="25.0" prefWidth="122.0" promptText="Enter the content" />
+                  <ComboBox fx:id="providerBox" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: aliceblue; -fx-background-color: aquamarine;" stylesheets="@styling.css" visibleRowCount="2">
+                      <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:id="reihe" fx:value="Google" />
+                    <String fx:id="parallel" fx:value="Yahoo" />
+                </FXCollections>
+            </items>
+                     <tooltip>
+                        <Tooltip text="Provider Box">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Tooltip>
+                     </tooltip>
+ </ComboBox>
+                  <Button fx:id="contentSearchButton" mnemonicParsing="false" onAction="#contentSearch" prefHeight="25.0" prefWidth="34.0" styleClass="searchButton" stylesheets="@styling.css" text="-&gt;" textFill="#dad8d8">
+                     <tooltip>
+                        <Tooltip text="Search ">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Tooltip>
+                     </tooltip></Button>
+                  <Button fx:id="historyButton" mnemonicParsing="false" onAction="#showHistory" style="-fx-background-color: #65b1d0; -fx-background-radius: 30px;" stylesheets="@styling.css">
+                     <tooltip>
+                        <Tooltip text="History">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@history.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="reloadButton" mnemonicParsing="false" onAction="#reload" style="-fx-background-radius: 30px; -fx-label-padding: 5 5 3 5;" stylesheets="@styling.css">
+                     <tooltip>
+                        <Tooltip text="Reload">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@reload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="26.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="325.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" onMouseClicked="#youtubeSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@youTube.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" onMouseClicked="#wikipediaSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@wikipedia.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="115.0" layoutY="10.0" onMouseClicked="#facebookSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@facebook.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="175.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="205.0" layoutY="10.0" onMouseClicked="#twitterSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@twitter.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="235.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="205.0" layoutY="10.0" onMouseClicked="#amazonSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@amazon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="295.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="303.0" layoutY="10.0" onMouseClicked="#googleSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@google.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="303.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="25.0" fitWidth="30.0" layoutX="358.0" layoutY="10.0" onMouseClicked="#yahooSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@yahoo.png" />
+                     </image></ImageView>
+               </children></HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <WebView fx:id="web" prefHeight="333.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
